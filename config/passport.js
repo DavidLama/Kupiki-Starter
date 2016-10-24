@@ -2,37 +2,44 @@ const _ = require('lodash');
 const passport = require('passport');
 const request = require('request');
 const LocalStrategy = require('passport-local').Strategy;
+const crypto = require('crypto');
 
-//const User = require('../models/User');
+const User = require('../database/models').User;
+
+const hash = (pwd) => {
+  return crypto
+    .createHash('sha1')
+    .update(pwd)
+    .digest('hex');
+};
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id, (err, user) => {
-    done(err, user);
-  });
+  User.findById(id).then(user => {
+    return done(null, user)
+  }).catch(done)
 });
 
 /**
- * Sign in using Email and Password.
+ * Sign in using Username and Password.
  */
-passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
-  User.findOne({ email: email.toLowerCase() }, (err, user) => {
-    if (err) { return done(err); }
-    if (!user) {
-      return done(null, false, { msg: `Email ${email} not found.` });
-    }
-    user.comparePassword(password, (err, isMatch) => {
-      if (err) { return done(err); }
-      if (isMatch) {
-        return done(null, user);
+passport.use(new LocalStrategy(
+  function(username, password, done) {
+    User.findOne({ username: username }).then(userByName => {
+      if (!userByName) {
+        return done(null, false, { message: 'Incorrect username.' });
+      } else {
+        if (hash(password) !== userByName.password) {
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+        return done(null, userByName);
       }
-      return done(null, false, { msg: 'Invalid email or password.' });
-    });
-  });
-}));
+    }).catch(done);
+  }
+));
 
 /**
  * Login Required middleware.
@@ -55,4 +62,4 @@ exports.isAuthorized = (req, res, next) => {
   } else {
     res.redirect(`/auth/${provider}`);
   }
-};
+};;
