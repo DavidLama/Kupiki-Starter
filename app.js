@@ -109,15 +109,10 @@ app.get('/account', passportConfig.isAuthenticated, userController.getAccount);
 app.post('/account/delete', passportConfig.isAuthenticated, userController.postDeleteAccount);
 app.post('/account/profile', passportConfig.isAuthenticated, userController.postUpdateProfile);
 app.post('/account/password', passportConfig.isAuthenticated, userController.postUpdatePassword);
-/*
-app.get('/forgot', userController.getForgot);
-app.post('/forgot', userController.postForgot);
-app.get('/reset/:token', userController.getReset);
-app.post('/reset/:token', userController.postReset);
 app.get('/contact', contactController.getContact);
 app.post('/contact', contactController.postContact);
-app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.getOauthUnlink);
-*/
+app.get('/forgot', userController.getForgot);
+app.post('/forgot', userController.postForgot);
 
 /**
  * API examples routes.
