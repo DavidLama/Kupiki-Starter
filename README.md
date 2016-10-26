@@ -27,9 +27,9 @@ Features
 How to start
 ------------
 
-# Clone the repository 
+- Clone the repository 
     ```git clone https://github.com/pihomeserver/kupiki-starter.git```
-# Install Dependencies 
+- Install Dependencies 
     ```cd kupiki-starter && npm install```
-# Run the dev server
+- Run the dev server
     ```node app.js```
