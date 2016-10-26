@@ -1,6 +1,10 @@
+KUPIKI-STARTER
+==============
+
 Kupiki-Starter is another boilerplate for Node.js web applications using SQLite as storage
 
-** Features
+Features
+--------
 
 * Local Authentication using Username and Password
 * Light SQLite database for user management
@@ -20,11 +24,12 @@ Kupiki-Starter is another boilerplate for Node.js web applications using SQLite 
 * API Example: Upload files on the server
 
 
-** How to start
+How to start
+------------
 
-- Clone the repository 
+# Clone the repository 
     ```git clone https://github.com/pihomeserver/kupiki-starter.git```
-- Install Dependencies 
+# Install Dependencies 
     ```cd kupiki-starter && npm install```
-- Run the dev server
+# Run the dev server
     ```node app.js```
