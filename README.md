@@ -15,12 +15,12 @@ Features
 * Bootstrap 3 + Extra Themes
 * Contact Form (powered by Sendgrid but Mailgun or Mandrill can be used)
 * Account Management
-** Gravatar
-** Profile Details
-** Change Password
-** Forgot Password
-** Reset Password
-** Delete Account
+* Gravatar
+* Profile Details
+* Change Password
+* Forgot Password
+* Reset Password
+* Delete Account
 * API Example: Upload files on the server
 
 
