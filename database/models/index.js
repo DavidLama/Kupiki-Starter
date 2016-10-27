@@ -1,7 +1,4 @@
 const Sequelize = require('sequelize');
-const dotenv = require('dotenv');
-
-dotenv.load({ path: '.env.example' });
 
 const dbConfig = {
     host: 'localhost',
