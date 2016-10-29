@@ -8,6 +8,7 @@ Features
 
 - Local Authentication using Username and Password
 - Light SQLite database for user management
+- [Material Design for Bootstrap](http://fezvrasta.github.io/bootstrap-material-design/) 
 - Flash notifications
 - MVC Project Structure
 - Node.js clusters support
@@ -21,8 +22,7 @@ Features
     - Forgot Password
     - Reset Password
     - Delete Account
-* API Example: Upload files on the server
-
+- API Example: Upload files on the server
 
 How to start
 ------------
