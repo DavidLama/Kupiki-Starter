@@ -27,7 +27,7 @@ Features
 Screenshots
 -----------
 
-![](https://goo.gl/photos/KyonzjyziidYcKpN9)
+![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/home.png)
 
 How to start
 ------------
