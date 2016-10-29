@@ -28,6 +28,11 @@ Screenshots
 -----------
 
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/home.png)
+![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/signin.png)
+![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/profile1.png)
+![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/profile2.png)
+![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/contact.png)
+![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/express-status.png)
 
 How to start
 ------------
