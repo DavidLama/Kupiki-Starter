@@ -27,11 +27,17 @@ Features
 Screenshots
 -----------
 
+<h4 align="center">The project home page</h4>
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/home.png)
+<h4 align="center">Creation of a new user</h4>
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/signin.png)
+<h4 align="center">The user profile (1/2)</h4>
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/profile1.png)
+<h4 align="center">The user profile (2/2)</h4>
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/profile2.png)
+<h4 align="center">Contact page with a Sendgrid account</h4>
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/contact.png)
+<h4 align="center">Express status</h4>
 ![](https://github.com/pihomeserver/kupiki-starter/blob/master/uploads/express-status.png)
 
 How to start
