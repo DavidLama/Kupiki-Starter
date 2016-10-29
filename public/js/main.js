@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
-  // Place JavaScript code here...
-
+  // Initialize Material Design - https://github.com/FezVrasta/bootstrap-material-design
+  $.material.init();
 });

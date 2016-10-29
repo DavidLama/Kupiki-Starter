@@ -1,6 +1,8 @@
 @import "themes/default/variables";
 
 @import "lib/bootstrap/bootstrap";
+@import "lib/bootstrap-material-design/bootstrap-material-design";
+@import "lib/bootstrap-material-design/ripples";
 @import "lib/bootstrap-social";
 @import "lib/font-awesome/font-awesome";
 
@@ -17,6 +19,7 @@ html {
 body {
   padding-top: 60px;
   margin-bottom: 75px;
+  background-color: #f0f8ff;
 }
 
 footer {
@@ -36,6 +39,11 @@ footer {
 
 textarea {
   resize: vertical;
+}
+
+.form-group.label-floating label.control-label,
+.form-group.label-placeholder label.control-label {
+  line-height: 1;
 }
 
 // Navbar

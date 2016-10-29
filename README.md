@@ -6,21 +6,21 @@ Kupiki-Starter is another boilerplate for Node.js web applications using SQLite 
 Features
 --------
 
-* Local Authentication using Username and Password
-* Light SQLite database for user management
-* Flash notifications
-* MVC Project Structure
-* Node.js clusters support
-* Sass stylesheets (auto-compiled via middleware)
-* Bootstrap 3 + Extra Themes
-* Contact Form (powered by Sendgrid but Mailgun or Mandrill can be used)
-* Account Management
-* Gravatar
-* Profile Details
-* Change Password
-* Forgot Password
-* Reset Password
-* Delete Account
+- Local Authentication using Username and Password
+- Light SQLite database for user management
+- Flash notifications
+- MVC Project Structure
+- Node.js clusters support
+- Sass stylesheets (auto-compiled via middleware)
+- Bootstrap 3 + Extra Themes
+- Contact Form (powered by Sendgrid but Mailgun or Mandrill can be used)
+- Account Management
+    - Gravatar
+    - Profile Details
+    - Change Password
+    - Forgot Password
+    - Reset Password
+    - Delete Account
 * API Example: Upload files on the server
 
 
