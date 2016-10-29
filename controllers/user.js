@@ -27,11 +27,10 @@ exports.getLogin = (req, res) => {
 
 /**
  * POST /login
- * Sign in using email and password.
+ * Sign in using username and password.
  */
 exports.postLogin = (req, res, next) => {
   req.assert('password', 'Password cannot be blank').notEmpty();
-  //req.sanitize('email').normalizeEmail({ remove_dots: false });
 
   const errors = req.validationErrors();
 
@@ -43,11 +42,13 @@ exports.postLogin = (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
     if (err) { return next(err); }
     if (!user) {
-      req.flash('errors', info);
+      req.flash('errors', { msg: info.message });
       return res.redirect('/login');
     }
     req.logIn(user, (err) => {
-      if (err) { return next(err); }
+      if (err) { 
+        return next(err);
+      }
       req.flash('success', { msg: 'Success! You are logged in.' });
       res.redirect(req.session.returnTo || '/');
     });
@@ -93,7 +94,7 @@ exports.postSignup = (req, res, next) => {
 
   const user = User.build(req.body);
 
-  User.findOne({ username: req.body.username })
+  User.findOne({ where: {username: req.body.username }})
     .then(existingUser => {
       if (existingUser) {
         req.flash('errors', { msg: 'Account with that username already exists.' });
@@ -170,7 +171,6 @@ exports.postUpdateProfile = (req, res, next) => {
           res.redirect('/account');
         })
         .catch(err => {
-            console.log(err)
             if (err.code === 11000) {
               req.flash('errors', { msg: 'The email address you have entered is already associated with an account.' });
               return res.redirect('/account');
@@ -246,7 +246,7 @@ exports.postForgot = (req, res, next) => {
       });
     },
     function (token, done) {
-      User.findOne({ email: req.body.email })
+      User.findOne({ where: {email: req.body.email }})
         .then(user => {
           if (!user) {
             req.flash('errors', { msg: 'Account with that email address does not exist.' });
