@@ -27,7 +27,7 @@ Features
 Screenshots
 -----------
 
-![](https://drive.google.com/open?id=0B5CzDtjmXSayVzZ6Sm5JYjJtX1k)
+![](https://goo.gl/photos/KyonzjyziidYcKpN9)
 
 How to start
 ------------
