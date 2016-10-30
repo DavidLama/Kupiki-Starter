@@ -130,17 +130,14 @@ exports.getAccount = (req, res) => {
  * Delete user account.
  */
 exports.postDeleteAccount = (req, res, next) => {
-  User.destroy({ 
-    where: {
-      id: req.user.id 
-    }
-  }).then(deletedElts => {
-    console.log(deletedElts)
-    req.logout();
-    req.flash('info', { msg: 'Your account has been deleted.' });
-    res.redirect('/');
-  })
-  .catch(err => next(err));
+  User.destroy({ where: {id: req.user.id}})
+    .then(deletedElts => {
+      console.log(deletedElts)
+      req.logout();
+      req.flash('info', { msg: 'Your account has been deleted.' });
+      res.redirect('/');
+    })
+    .catch(err => next(err));
 };
 
 /**
@@ -158,13 +155,13 @@ exports.postUpdateProfile = (req, res, next) => {
     return res.redirect('/account');
   }
 
-  User.findOne({ id: req.user.id })
+  User.findOne({ where: {id: req.user.id }})
     .then(user => {
-      user.email = req.body.email || '';
-      user.name = req.body.name || '';
-      user.gender = req.body.gender || '';
-      user.location = req.body.location || '';
-      user.website = req.body.website || '';
+      user.email = req.body.email || undefined;
+      user.name = req.body.name || undefined;
+      user.gender = req.body.gender || undefined;
+      user.location = req.body.location || undefined;
+      user.website = req.body.website || undefined;
       user.save()
         .then((user) => {
           req.flash('success', { msg: 'Profile information has been updated.' });
@@ -196,7 +193,7 @@ exports.postUpdatePassword = (req, res, next) => {
     return res.redirect('/account');
   }
 
-  User.findOne({ id: req.user.id })
+  User.findOne({ where {id: req.user.id }})
     .then(user => {
       user.password = hash(req.body.password);
       user.save()
