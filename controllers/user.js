@@ -193,7 +193,7 @@ exports.postUpdatePassword = (req, res, next) => {
     return res.redirect('/account');
   }
 
-  User.findOne({ where {id: req.user.id }})
+  User.findOne({ where :{id: req.user.id }})
     .then(user => {
       user.password = hash(req.body.password);
       user.save()
