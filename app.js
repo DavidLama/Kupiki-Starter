@@ -65,7 +65,8 @@ app.use(session({
   secret: process.env.SESSION_SECRET,
   saveUninitialized: true,
   resave: true,
-  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },
+//  cookie: { maxAge: 7 * 24 * 60 * 60 * 1000 },
+  cookie: { maxAge: 60 * 60 * 1000 },
   store: new SQLiteStore
 }));
 app.use(passport.initialize());
