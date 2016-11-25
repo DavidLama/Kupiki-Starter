@@ -119,9 +119,9 @@ app.post('/forgot', userController.postForgot);
 /**
  * API examples routes.
  */
-app.get('/api', apiController.getApi);
-app.get('/api/upload', apiController.getFileUpload);
-app.post('/api/upload', upload.single('myFile'), apiController.postFileUpload);
+app.get('/api', passportConfig.isAuthenticated, apiController.getApi);
+app.get('/api/upload', passportConfig.isAuthenticated, apiController.getFileUpload);
+app.post('/api/upload', passportConfig.isAuthenticated, upload.single('myFile'), apiController.postFileUpload);
 
 /**
  * Error Handler.
