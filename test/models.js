@@ -1,6 +1,14 @@
 const chai = require('chai');
 const expect = chai.expect;
 const User = require('../database/models/User');
+const crypto = require('crypto');
+
+const hash = (pwd) => {
+  return crypto
+    .createHash('sha1')
+    .update(pwd)
+    .digest('hex');
+};
 
 describe('User Model', () => {
   it('should create a new user', (done) => {
