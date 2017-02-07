@@ -1,24 +1,30 @@
 const chai = require('chai');
 const expect = chai.expect;
-const User = require('../database/models/User');
-const crypto = require('crypto');
+const User = require('../database/models').User;
+//const crypto = require('crypto');
 
+/*
 const hash = (pwd) => {
   return crypto
     .createHash('sha1')
     .update(pwd)
     .digest('hex');
 };
+*/
 
+
+
+
+/*
 describe('User Model', () => {
   it('should create a new user', (done) => {
-    const user = new User({
-      email: 'test@gmail.com',
+    const user = User.build({
+      username: 'testnpm',
       password: 'password'
     });
     user.save((err) => {
       expect(err).to.be.null;
-      expect(user.email).to.equal('test@gmail.com');
+      expect(user.username).to.equal('testnpm');
       expect(user).to.have.property('createdAt');
       expect(user).to.have.property('updatedAt');
       done();
@@ -26,8 +32,8 @@ describe('User Model', () => {
   });
 
   it('should not create a user with the unique email', (done) => {
-    const user = new User({
-      email: 'test@gmail.com',
+    const user = User.build({
+      username: 'testnpm',
       password: 'password'
     });
     user.save((err) => {
@@ -38,17 +44,23 @@ describe('User Model', () => {
   });
 
   it('should find user by email', (done) => {
-    User.findOne({ email: 'test@gmail.com' }, (err, user) => {
+    User.findOne({ username: 'testnpm' }, (err, user) => {
       expect(err).to.be.null;
-      expect(user.email).to.equal('test@gmail.com');
+      expect(user.username).to.equal('testnpm');
       done();
     });
   });
 
   it('should delete a user', (done) => {
-    User.remove({ email: 'test@gmail.com' }, (err) => {
+    User.destroy({ where: {username: 'testnpm'}}, (err) => {
       expect(err).to.be.null;
       done();
     });
+    User.destroy({ where: {username: 'testnpm'}})
+      .then(deletedElts => {
+        done()
+      })
+      .catch(err => next(err));
   });
 });
+*/
