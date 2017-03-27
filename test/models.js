@@ -12,6 +12,37 @@ const hash = (pwd) => {
 };
 */
 
+describe('User Model', () => {
+    it('should create a new user', (done) => {
+        const user = User.build({
+            username: 'testnpm',
+            password: 'password'
+        });
+        user.save()
+            .then((user) => {
+                expect(user.username).to.equal('testnpm');
+                expect(user).to.have.property('createdAt');
+                expect(user).to.have.property('updatedAt');
+                done()
+            })
+            .catch((err) => {
+                done(err)
+            })
+    });
+
+    it('should delete a user', (done) => {
+        User.destroy({ where: {username: 'testnpm'}})
+        .then((user) => {
+            expect(user, 'Expected to delete 1 user').to.equal(1);
+            done() })
+        .catch((err) => {
+            console.log(err)
+            done(err)
+        });
+    });
+
+})
+
 
 
 

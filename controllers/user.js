@@ -132,7 +132,6 @@ exports.getAccount = (req, res) => {
 exports.postDeleteAccount = (req, res, next) => {
   User.destroy({ where: {id: req.user.id}})
     .then(deletedElts => {
-      console.log(deletedElts)
       req.logout();
       req.flash('info', { msg: 'Your account has been deleted.' });
       res.redirect('/');
