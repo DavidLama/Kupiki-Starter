@@ -28,7 +28,7 @@ Screenshots
 -----------
 
 <h4 align="center">The project home page</h4>
-![](http://www.pihomeserver.fr/hosting/home.png)
+![](https://cloud.githubusercontent.com/assets/3817578/24560587/a4aa0186-1643-11e7-976a-12d8df38552b.png)
 <h4 align="center">Creation of a new user</h4>
 ![](http://www.pihomeserver.fr/hosting/signin.png)
 <h4 align="center">The user profile (1/2)</h4>
